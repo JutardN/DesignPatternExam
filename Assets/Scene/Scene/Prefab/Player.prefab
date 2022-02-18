@@ -120,11 +120,11 @@ MonoBehaviour:
   _mainCamera: {fileID: 0}
   _movement: {fileID: 4880755393553903839}
   _fire: {fileID: 4282943184299706631}
-  _shield: {fileID: 0}
+  _shield: {fileID: 3629205598276025773}
   _pointerPosition: {fileID: -783169567023109517, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
   _moveJoystick: {fileID: 1202087846194337127, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
   _fireButton: {fileID: 1288914843486402132, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
-  _shieldButton: {fileID: 0}
+  _shieldButton: {fileID: 363605653735544289, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
 --- !u!1 &2718515491814373226
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _radius: {fileID: 0}
   _player: {fileID: 4509255931906459442}
-  _objectInRadius: []
+  _objects: []
 --- !u!114 &894470899546926642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 7257506456246402187}
   _bulletPrefab: {fileID: 6056709005347279180, guid: 01834f7a3e0c2fb448d9d118fcdbd49c, type: 3}
+  _bulletPool: {fileID: 0}
 --- !u!114 &2103652747003793891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,3 +934,4 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls: []
+  shakeCam: {fileID: 0}
