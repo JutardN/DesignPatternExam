@@ -10,11 +10,14 @@ public class PlayerInputDispatcher : MonoBehaviour
 
     [SerializeField] EntityMovement _movement;
     [SerializeField] EntityFire _fire;
+    [SerializeField] EntityShield _shield;
 
     [SerializeField] InputActionReference _pointerPosition;
     [SerializeField] InputActionReference _moveJoystick;
     [SerializeField] InputActionReference _fireButton;
+    [SerializeField] InputActionReference _shieldButton;
 
+    bool shielding;
     Coroutine MovementTracking { get; set; }
 
     Vector3 ScreenPositionToWorldPosition(Camera c, Vector2 cursorPosition) => _mainCamera.ScreenToWorldPoint(cursorPosition);
@@ -26,6 +29,8 @@ public class PlayerInputDispatcher : MonoBehaviour
 
         _moveJoystick.action.started += MoveInput;
         _moveJoystick.action.canceled += MoveInputCancel;
+        _shieldButton.action.started += ShieldInput;
+        _shieldButton.action.canceled += ShieldInputCancel;
     }
 
     private void OnDestroy()
@@ -34,6 +39,8 @@ public class PlayerInputDispatcher : MonoBehaviour
 
         _moveJoystick.action.started -= MoveInput;
         _moveJoystick.action.canceled -= MoveInputCancel;
+        _shieldButton.action.started -= ShieldInput;
+        _shieldButton.action.canceled -= ShieldInputCancel;
     }
 
     private void MoveInput(InputAction.CallbackContext obj)
@@ -62,11 +69,27 @@ public class PlayerInputDispatcher : MonoBehaviour
 
     private void FireInput(InputAction.CallbackContext obj)
     {
-        float fire = obj.ReadValue<float>();
-        if(fire==1)
+        if (!shielding)
         {
-            _fire.FireBullet(2);
+            float fire = obj.ReadValue<float>();
+            if (fire == 1)
+            {
+                _fire.FireBullet(2);
+            }
         }
     }
 
+    // Defense
+    private void ShieldInput(InputAction.CallbackContext obj)
+    {
+        _shield.Shield();
+        shielding = true;
+    }
+
+    // Defense cancel au cas où on aurait besoin de faire autre chose
+    private void ShieldInputCancel(InputAction.CallbackContext obj)
+    {
+        _shield.Shield();
+        shielding = false;
+    }
 }

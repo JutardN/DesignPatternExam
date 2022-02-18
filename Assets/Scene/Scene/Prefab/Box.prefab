@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8381437476024049863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08710098, y: 0.8229134, z: 0.046372652}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 854195510154151125}
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1877c82ee7293904fbdc533c958b3762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potion: {fileID: 4136687993625670542, guid: 6cb9fd1bc364e774a98436293ba4a11c, type: 3}
 --- !u!61 &3562105877424766730
 BoxCollider2D:
   m_ObjectHideFlags: 0

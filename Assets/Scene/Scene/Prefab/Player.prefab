@@ -120,9 +120,11 @@ MonoBehaviour:
   _mainCamera: {fileID: 0}
   _movement: {fileID: 4880755393553903839}
   _fire: {fileID: 4282943184299706631}
+  _shield: {fileID: 0}
   _pointerPosition: {fileID: -783169567023109517, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
   _moveJoystick: {fileID: 1202087846194337127, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
   _fireButton: {fileID: 1288914843486402132, guid: edb876c493db3cc41bcfd505340de7ef, type: 3}
+  _shieldButton: {fileID: 0}
 --- !u!1 &2718515491814373226
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +372,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8718385489110254335}
   - component: {fileID: 3916804375536699047}
+  - component: {fileID: 1227662188400573404}
+  - component: {fileID: 894470899546926642}
   m_Layer: 0
   m_Name: ObjectTrigger
   m_TagString: Untagged
@@ -417,6 +421,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9410648, y: 2.2955625}
   m_EdgeRadius: 0
+--- !u!114 &1227662188400573404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656551847328665815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82aa9044bb8b93945a73674f02ff8f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: {fileID: 0}
+  _player: {fileID: 4509255931906459442}
+  _objectInRadius: []
+--- !u!114 &894470899546926642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656551847328665815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2524a10b65fc05645b384c7721d79e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colliders:
+  - {fileID: 3916804375536699047}
+  _onTriggerEnter2D:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerStay2D:
+    m_PersistentCalls:
+      m_Calls: []
+  _onTriggerExit2D:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionEnter2D:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollisionExit2D:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4719610752975132196
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +641,7 @@ GameObject:
   - component: {fileID: 4880755393553903839}
   - component: {fileID: 4282943184299706631}
   - component: {fileID: 2103652747003793891}
+  - component: {fileID: 3629205598276025773}
   m_Layer: 0
   m_Name: CharacterAbilities
   m_TagString: Untagged
@@ -657,6 +706,19 @@ MonoBehaviour:
   _cursorRef: {fileID: 11400000, guid: 9197bcf8a4454f344881ea88995e5930, type: 2}
   _player: {fileID: 4509255931906459442}
   _sprite: {fileID: 2950811546776138143}
+--- !u!114 &3629205598276025773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361803221221579786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546fd89975dbe7f40be8e3c69e359003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1657962468365373699}
 --- !u!1 &7144573470162700296
 GameObject:
   m_ObjectHideFlags: 0

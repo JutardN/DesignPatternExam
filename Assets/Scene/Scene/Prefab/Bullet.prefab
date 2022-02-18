@@ -49,6 +49,10 @@ MonoBehaviour:
   _rb: {fileID: 7551320715217455284}
   _speed: 0.3
   _collisionCooldown: 0.1
+  _fxBullet: {fileID: 5879044814608950633, guid: 30a1e58832913c44fa744405afff1f40, type: 3}
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &721766070828420108
 BoxCollider2D:
   m_ObjectHideFlags: 0

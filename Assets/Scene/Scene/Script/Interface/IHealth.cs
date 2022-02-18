@@ -15,5 +15,6 @@ public interface IHealth
     event UnityAction OnDeath;
 
     void TakeDamage(int amount);
+    void RegenHP(int amount);
 
 }
